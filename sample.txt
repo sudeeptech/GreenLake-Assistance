@@ -208,3 +208,13 @@ Click the Yes, Convert Now button.
 You are logged out of your current workspace and automatically redirected to the login page.
 Navigate to the workspace management page and click the Menu icon.
 The Global navigation menu global navigation menu icon in the GreenLake cloud header now contains a Tenants option.
+
+Disabling the MSP mode
+
+Log in to your workspace as an administrator.
+On the Manage Workspace page, select the Manage Workspace Type link on your workspace card.
+Under the Requirements for a Standard Enterprise Workspace section, click Review Tenant Workspaces.
+Review and delete the tenant workspaces.
+Click the Convert to Standard Enterprise Mode button under the Requirements for a Standard Enterprises Workspace section.
+Click the Yes, Convert Now button.
+You are logged out of your current workspace and automatically redirected to the GreenLake login page.
