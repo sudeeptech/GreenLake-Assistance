@@ -337,3 +337,22 @@ To add devices using a CSV file, select .CSV File for the Ownership Type.
 Click Download Sample File and review the device information required.
 Edit the sample file to add details for each of the devices you want to add. You can also specify tags for each device.
 
+Assigning devices to a service
+About this task
+The Inventory section on the Devices page enables you to assign, update, or even remove the subscription of a device from a service instance.
+
+Procedure
+On the GreenLake cloud header, click the Global navigation menu global navigation menu icon.
+Select Devices > Devices Inventory.
+The Inventory page opens showing all devices in your inventory.
+Click the Require Service Assignments card.
+The inventory list displays all devices requiring assignments.
+Use the check boxes to select the devices you want to assign to a service.
+From the Actions drop-down, click Assign to Service.
+If you have multiple workspaces, the Select a Workspace page appears with the list of your existing workspaces.
+Select a workspace and click Next.
+On the Assign Devices to Service Instance page, from the drop-down lists, select a Service instance and a Region (for the service instance) to assign your devices.
+A Devices Assigned dialog appears.
+Click View Audit Log to check the audit logs for assignment activity details, otherwise, click Close.
+Click Finish.
+
