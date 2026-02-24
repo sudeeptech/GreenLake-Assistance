@@ -17,11 +17,10 @@ st.set_page_config(
 )
 
 st.title("💬 GreenLake Assist (RAG)")
-
 # reload document when file updated
 if st.button("🔄 Reload Document"):
     st.cache_resource.clear()
-    st.experimental_rerun()
+    st.rerun()
 
 # -------------------------
 # CHAT HISTORY
@@ -47,6 +46,7 @@ llm = ChatGroq(
 # -------------------------
 @st.cache_resource
 def setup_rag():
+
     from langchain_community.document_loaders import TextLoader
     from langchain_text_splitters import RecursiveCharacterTextSplitter
     from langchain_community.vectorstores import FAISS
@@ -63,7 +63,7 @@ def setup_rag():
     )
     split_docs = splitter.split_documents(docs)
 
-    # create embeddings
+    # create embeddings (free local model)
     embeddings = HuggingFaceEmbeddings(
         model_name="sentence-transformers/all-MiniLM-L6-v2"
     )
@@ -73,8 +73,9 @@ def setup_rag():
 
     return vectorstore.as_retriever(search_kwargs={"k": 3})
 
+
 # initialize retriever
-retriever = setup_rag()
+ retriever = setup_rag()
 
 # -------------------------
 # USER INPUT
@@ -82,18 +83,21 @@ retriever = setup_rag()
 user_prompt = st.chat_input("Ask from document...")
 
 if user_prompt:
+
     # show user message
     st.chat_message("user").markdown(user_prompt)
-    st.session_state.chat_history.append({"role": "user", "content": user_prompt})
+    st.session_state.chat_history.append(
+        {"role": "user", "content": user_prompt}
+    )
 
     # retrieve relevant document chunks
-    docs = retriever.get_relevant_documents(user_prompt)
+    docs = retriever.invoke(user_prompt)
 
     # combine context
     context = "\n".join([doc.page_content for doc in docs])
 
     # RAG prompt (prevents hallucination and handles vague queries)
-    rag_prompt = f"""
+rag_prompt = f"""
 You are an internal company support assistant.
 
 Follow these rules strictly:
@@ -117,15 +121,14 @@ User Question:
 Helpful Answer:
 """
 
-    # generate response using ChatGroq
-    try:
-        response = llm(rag_prompt)  # use llm() instead of invoke()
-        assistant_response = response.content if hasattr(response, "content") else response
-    except Exception as e:
-        assistant_response = f"Sorry, I encountered an error: {e}"
+    # generate response
+    response = llm.invoke(rag_prompt)
+    assistant_response = response.content
 
     # save response
-    st.session_state.chat_history.append({"role": "assistant", "content": assistant_response})
+    st.session_state.chat_history.append(
+        {"role": "assistant", "content": assistant_response}
+    )
 
     # display response
     with st.chat_message("assistant"):
