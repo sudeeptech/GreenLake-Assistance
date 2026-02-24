@@ -1,194 +1,176 @@
-Adding service subscriptions to your workspace
-Prerequisites
-You have a workspace administrator role or a role with permissions to modify subscriptions
+Formatted Content for sample.txt (Copy Paste This)
+About Service Subscriptions — HPE GreenLake
 
-You must set up services before adding subscriptions. See Adding Services to your Workspace.
+Service subscriptions allow users to activate and use services within a workspace.
+A subscription key is required to enable a service.
 
-About this task
-NOTE
-OpsRamp customers can manage OpsRamp service subscriptions directly in OpsRamp. For more information, see OpsRamp documentation at https://docs.opsramp.com/.
+Only one subscription is needed per service and workspace.
+When a service is deployed, the subscription is automatically applied.
 
-Procedure
-On the GreenLake cloud header, click the Global navigation menu global navigation menu icon.
-Select Services > Manage service subscription.
-On the Service Subscriptions page, click Add Service Subscription.
-Follow the steps in the wizard to add the service subscription. See the field descriptions table for help on each step of the wizard.
-Field	Description
-Step 1 of 4 Add Service Subscription
-Enter subscription key	Enter the subscription key that you received in your email.
-Step 2 of 4 Assign Tags (Optional)
-Assign tags	
-Select an existing tag name from the list or create a name by entering a name in the box.
+Prerequisites for Adding Service Subscription
 
-Select an existing value from the list or create a value by entering a value in the box.
+User must have Workspace Administrator role OR permission to modify subscriptions.
 
-Click Assign to assign the tag to the service subscription.
+Services must be set up before adding a subscription.
 
-Repeat to add more tags.
+Subscription key must be received from HPE via email.
 
-You can add up to 50 tags. For more information about tag specifications, see Tags.
+Steps to Add Service Subscription
+Step 1 — Open Service Subscription Page
 
-Step 3 of 4 Manage showback rates (Optional)
-NOTE
-Showback rates entry is optional and applies only to services where usage monitoring is available.
+Login to GreenLake Cloud.
 
-When this option is available, you can choose to skip this step: clear the Add showback rates check box and click Next to review and finalize your entry. To enter showback rates later, see Managing showback rates for service subscriptions.
+Click Global Navigation Menu.
 
-For more information about showback rates, see Showback rates for subscriptions and Working with showback reporting
+Go to:
 
-Adding showback rates and effective dates will update a large number of records, which can take 30 minutes or more.
+Services → Manage Service Subscription.
 
-Enter rates	
-Enter an Effective date for the first meter shown. You can enter the current date or paste a date. Cost is calculated at the rate that you enter from the effective date forward.
+Click Add Service Subscription.
 
-Enter the ratefor the first volume tier (rate band).
+Step 2 — Enter Subscription Key
 
-Repeat for the second rate band if there is one.
+Enter the subscription key received via email.
 
-Repeat these steps for any additional meter.
+Click Next.
 
-Click Next to review and add your service subscription.
+Step 3 — Assign Tags (Optional)
 
-Step 4 of 4 Review Add Service Subscription
-Verify entries	
-Verify the settings for your service subscription.
+Select or create tag name.
 
-If you want to change any of the values, return to the relevant step in the wizard and update the values as needed.
+Select or create tag value.
 
-Click Finish to add the service subscription.
-
-Your service is now ready to use.
-
-To view your service subscriptions, click Service Subscriptions on the Services page.
-
-NOTE
-There is no need to assign a service subscription to a service. When a service is deployed, the subscription is automatically applied to the workspace.
-
-You only need one subscription per service and workspace.
-
-Removing service subscriptions from your workspace
-Prerequisites
-You are a workspace administrator or have a user role with permissions to modify subscriptions.
-
-About this task
-Service subscriptions can be removed from workspaces, allowing you to organize your subscriptions between your workspaces. After a service subscription has been removed from a workspace, you can then add it to another workspace.
-
-Example scenario: moving service subscriptions between workspaces.
-
-While adding a service subscription to Workspace A, an onscreen message tells you that the service subscription is already added to Workspace B.
-
-Your actions depend on your user role and workspace access:
-
-If you have a workspace administrator role (or a role with permission to modify subscriptions) for Workspace B:
-Log into Workspace B and remove the service subscription.
-Log into Workspace A and add the service subscription.
-If you have access to Workspace B but you do not have a workspace administrator role (or a role with permission to modify subscriptions), you can:
-Ask the workspace administrator of Workspace B to remove the service subscription from the workspace.
-Log into Workspace A and add the service subscription.
-NOTE
-If you do not have access to Workspace B, the onscreen messages do not display the name of the workspace. In this case, you will be directed to get assistance from HPE support.
-Procedure
-On the GreenLake cloud header, click the Global navigation menu global navigation menu icon.
-Select Services > Manage service subscription.
-The Service Subscriptions page opens.
-Use the filters or search to find the subscriptions that you want to remove from the workspace.
-Select the check boxes to select one or more subscriptions.
-Click Actions > Remove subscriptions.
-On the Remove subscriptions? confirmation box, confirm that you want to remove the subscriptions.
-The subscription is removed from your workspace.
-
-Any tags that were added to the subscription are removed.
-
-The action is recorded in the Audit Log.
-
-(Optional) To verify that the subscription has been removed, enter the subscription key in the search box.
-If the subscription has been removed, the search results will be empty.
-If you want to add the subscription to another workspace, log in to the workspace and add the subscription.
-For more information about adding service subscriptions to workspaces, see Adding service subscriptions to your workspace.
-
-
-Managing tags for service subscriptions
-About this task
-Create, assign, or remove tags for one or more service subscriptions. For information about tags and tag specifications, see Tags.
-
-Procedure
-On the GreenLake cloud header, click the Global navigation menu global navigation menu icon.
-Select Services > Manage service subscriptions.
-The Services Subscriptions page opens.
-Select one or more service subscriptions.
-Click Actions > Manage Tags.
-The Manage Tags on Resources dialog box appears.
-
-If you selected:
-
-One service subscription: all tags assigned to the device subscription are displayed.
-Multiple service subscriptions: tags that are common to all the selected device subscriptions are displayed.
-NOTE
-Changes you make to tags in the Manage Tags on Resources dialog box apply to all the selected service subscriptions.
-To assign a tag:
-Select the name of an existing tag or create a name.
-(Optional) Select the name of an existing value or create a value.
 Click Assign.
-Repeat to add more tags.
-You can assign up to 50 tags.
 
-To remove a tag, click the x icon for the tag.
-NOTE
-If the tag is not assigned to any other resources, it is deleted from the workspace.
+Maximum 50 tags allowed.
 
-To apply the changes, click Save Changes.
-Results
-The Tags column of each service subscription is updated.
-You can view all tags for the workspace on the Tags page. For more information, see Viewing all tags in your workspace.
+Click Next.
 
+Step 4 — Manage Showback Rates (Optional)
 
-Viewing and downloading service subscription data
-About this task
-You can view service subscription details to keep a check on expiration date, subscription status and more.
-Procedure
-On the GreenLake cloud header, click the Global navigation menu global navigation menu icon.
-Select Services > Manage service subscription.
-The Service Subscriptions table lists the total number of service subscription keys including details of the subscription tier, type, and expiration date. Click on each service subscription to get more details about the specific subscription.
-Use the cards above the table to further narrow the results.
-Use the Filter icon to select specific criteria (Subscription Tier, Expiration Date, Visibility, or Subscription Type) for the subscriptions you want to include in your export.
-Click Apply Filters to view the subset of subscription keys based on your selection criteria.
-In the Actions drop-down, select Export.
-In the Export Service Subscription Data pane, enter the following details:
-Enter an email address to receive the file.
-In the Included Entries section, you can choose to include the entire subscription inventory or just the current search results.
-In the Service Subscription Details section, select the check boxes for the details you want to include for each service subscription.
-Click Generate Report.
-A Generating Report notification message appears at the top of the screen with the status of your report. When your report is ready, a Service Subscriptions report banner notification appears with a link to download the report. Click X to close these messages.
-A Service Subscriptions Report is sent to the email address provided in the previous step. Click the Download Report link in the email to download the report in CSV format.
-NOTE
-If you are not logged in to GreenLake cloud, the download link opens the GreenLake cloud login page. After you log in, the report automatically downloads to your computer.
-The download link is valid for seven days.
-The notification message is also available in the Notifications Center page where it is visible to the author and the recipient email user.
-The report status is also available on the Audit Log page.
+Used only for usage monitoring services.
 
-Adding services to your workspace
+Can skip this step.
 
-About this task
-You can use GreenLake cloud to add any services listed in the services page of your workspace. You can also think of the Add functionality as service onboarding.
+Enter effective date and rate if required.
 
-Procedure
-On the GreenLake cloud header, click the Global navigation menu global navigation menu icon.
-Select Services > Service catalog.
-The Services Catalog page shows services that are available in your workspace.
-Click any service to learn more about the service.
-Select Launch on the services catalog details view and follow the prompts from the Deploy Service wizard to deploy the service.
-NOTE
-If you are authorized to add the selected service, a successful provisioning message appears. If you do not have the authorization to add or load this service into your workspace, a failed provisioning message appears. Contact your account administrator for help.
+Click Next.
 
+Step 5 — Review and Finish
 
-Adding services to your workspace
-About this task
-You can use GreenLake cloud to add any services listed in the services page of your workspace. You can also think of the Add functionality as service onboarding.
+Verify all details.
 
-Procedure
-On the GreenLake cloud header, click the Global navigation menu global navigation menu icon.
-Select Services > Service catalog.
-The Services Catalog page shows services that are available in your workspace.
-Click any service to learn more about the service.
-Select Launch on the services catalog details view and follow the prompts from the Deploy Service wizard to deploy the service.
+Click Finish.
 
+Service subscription is added to workspace.
+
+Viewing Service Subscriptions
+
+Go to Services → Manage Service Subscription.
+
+View:
+
+Subscription status
+
+Expiration date
+
+Subscription tier
+
+Subscription type.
+
+Removing Service Subscription from Workspace
+Prerequisites
+
+Workspace Administrator role required.
+
+Steps
+
+Go to Services → Manage Service Subscription.
+
+Search for subscription.
+
+Select subscription.
+
+Click Actions → Remove Subscriptions.
+
+Confirm removal.
+
+After removal:
+
+Subscription can be added to another workspace.
+
+Tags are removed.
+
+Action recorded in audit log.
+
+Managing Tags for Service Subscriptions
+
+Users can create, assign, or remove tags.
+
+Steps
+
+Go to Services → Manage Service Subscription.
+
+Select subscription.
+
+Click Actions → Manage Tags.
+
+Add or remove tags.
+
+Click Save Changes.
+
+Maximum 50 tags allowed.
+
+Viewing and Downloading Subscription Data
+
+Users can export subscription details.
+
+Steps
+
+Go to Services → Manage Service Subscription.
+
+Apply filters if required.
+
+Click Actions → Export.
+
+Enter email address.
+
+Generate report.
+
+Download report from email.
+
+Report contains:
+
+Subscription tier
+
+Status
+
+Expiration date
+
+Subscription type.
+
+Adding Services to Workspace (Service Deployment)
+
+Service subscription works only after service deployment.
+
+Steps
+
+Go to Services → Service Catalog.
+
+Select service.
+
+Click Launch.
+
+Follow Deploy Service wizard.
+
+If user lacks permission → contact administrator.
+
+Important Notes
+
+Subscription is automatically applied when service is deployed.
+
+Only one subscription per service per workspace is required.
+
+Subscription may take time to provision.
+
+If subscription exists in another workspace, remove it before adding.
