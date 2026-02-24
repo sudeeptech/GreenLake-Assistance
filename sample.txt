@@ -180,3 +180,15 @@ Select Launch on the services catalog details view and follow the prompts from t
 NOTE
 If you are authorized to add the selected service, a successful provisioning message appears. If you do not have the authorization to add or load this service into your workspace, a failed provisioning message appears. Contact your account administrator for help.
 
+
+Adding services to your workspace
+About this task
+You can use GreenLake cloud to add any services listed in the services page of your workspace. You can also think of the Add functionality as service onboarding.
+
+Procedure
+On the GreenLake cloud header, click the Global navigation menu global navigation menu icon.
+Select Services > Service catalog.
+The Services Catalog page shows services that are available in your workspace.
+Click any service to learn more about the service.
+Select Launch on the services catalog details view and follow the prompts from the Deploy Service wizard to deploy the service.
+
