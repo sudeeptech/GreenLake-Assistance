@@ -233,3 +233,92 @@ Step 5: Enter a new password that meets the following requirements:
    - Contains at least one special character (e.g., !@#$%^&*)
 Step 6: Confirm your new password and click "Submit".
 Step 7: Log in with your new password.
+
+Disabling the MSP mode
+Log in to your workspace as an administrator.
+On the Manage Workspace page, select the Manage Workspace Type link on your workspace card.
+Under the Requirements for a Standard Enterprise Workspace section, click Review Tenant Workspaces.
+Review and delete the tenant workspaces.
+Click the Convert to Standard Enterprise Mode button under the Requirements for a Standard Enterprises Workspace section.
+Click the Yes, Convert Now button.
+You are logged out of your current workspace and automatically redirected to the GreenLake login page.
+
+Inviting users
+About this task
+Account administrators can easily invite team members to join GreenLake cloud by sending them a sign-up link in an email using either of the following options:
+The Invite users card on the Quick Actions section of the Workspace identity & access page
+
+The Invite Users button on the Workspace identity & access > Users page
+
+NOTE
+In an MSP environment, user access and privileges are based on the workspace from which the invite is issued. Users invited from a tenant workspace are tenant users and users invited from the MSP workspace are MSP users.
+Procedure
+On the GreenLake cloud header, click the workspace menu and then select Manage Workspace.
+On the Manage Workspace page, click the Workspace identity & access card.
+On the Workspace identity & access page, click the Invite Users card.
+The Invite User window opens.
+
+Deleting a user
+Procedure
+On the GreenLake cloud header, click the workspace menu and then select Manage Workspace.
+Click the Workspace identity & access card and then on the Workspace identity & access page, click the Users card.
+The Users page displays a list of verified and unverified users.
+Select the check box next to the name of a user and click the ellipses (…) and then select Delete.
+Confirm the user deletion in the Delete User action dialog.
+
+
+Viewing audit logs for users
+About this task
+Audit logs are generated when a new user is created and an existing user is modified or deleted from the GreenLake cloud workspace. It also records the login and logout activities of users.
+
+Procedure
+On the GreenLake cloud header, click the workspace menu and then select Manage Workspace.
+On the Manage Workspace page, click the Audit Log card.
+The Audit Log page appears.
+To filter audit logs about user activity, use the filter or click the Actions > Edit Columns link, and select up to six different columns.
+To sort audit logs by user name, click the Username column heading.
+
+Creating user roles
+About this task
+You can create custom roles for specific services on the GreenLake cloud and add permissions to define the access privileges for users assigned the role.
+Procedure
+On the GreenLake cloud header, click the workspace menu and then select Manage Workspace.
+On the Manage Workspace page, click the Workspace identity & access card.
+On the Workspace identity & access page, click the Roles & Permissions card.
+The Roles & Permissions page appears.
+Click the Create role button.
+NOTE
+Use the Duplicate existing role option to make a copy of an existing custom role and modify it to suit your needs. Built-in or predefined roles cannot be duplicated or edited.
+From the Service drop-down list, select the service to which the role applies.
+Click Next.
+The Create Role Wizard appears.
+Follow the directions on the Create Role Wizard to complete the role setup.
+Add Name & Description screen—add a role name and description and click Next.
+Add <Service> Permissions screens—click Add Permissions to access the permissions screens where you can select the actions that a user with this role can perform in the selected service. After adding permissions, click Next to continue.
+Review & Create screen—this screen shows you the role details, including the permission granted for each role. Use this screen to review your role configuration before creating it. You can change the role name and permissions using the Modify link.
+Click Finish to create the role.
+The new role is added to the Roles & Permissions page. Use the search or sort the list by name to find the newly created role in the list.
+
+Viewing resource restriction policy details
+Procedure
+On the GreenLake cloud header, click the workspace menu and then select Manage Workspace.
+On the Manage Workspace page, click the Workspace identity & access card.
+On the Workspace identity & access page, click the Resource Restriction Policy card.
+The Resource Restriction Policies page displays a list of resource restriction policies (RRP) and their information.
+Name
+The name of the RRP
+Description
+A brief description of the RRP
+Service
+The service for which the RRP defines access limits
+Date Created
+The date the RRP was created
+The Create Resource Restriction Policy button accesses a wizard that steps you through the process for creating a new RRP.
+Click an RRP to display its details.
+The Details section provides basic information from the table view on the main RRP page.
+
+The Resources section lists the resources included in the RRP. Scope resources are listed in bold with their member scope instances below them.
+
+The Role Assignments section lists the users and the role assignments where this RRP is applied. The list displays up to ten role assignments on the page; use the page numbers to view additional roles assigned to the user.
+
+
