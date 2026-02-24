@@ -16,3 +16,65 @@ Alternatively, go directly to the Create an HPE Account page: https://auth.hpe.c
 Fill in the required fields, and click Create Account.
 You will receive a verification email. Click the Activate HPE Account link in the email. If you do not receive the email, check Troubleshooting.
 If you need additional help, contact support.
+
+
+If you have forgotten your password, use the appropriate reset method below:
+
+If you are an HPE GreenLake Platform customer, or use any service that you access by first logging on to HPE GreenLake Platform, see Forgotten password - HPE GreenLake Platform.
+
+If you are not using the HPE GreenLake Platform, see Forgotten password - Non HPE GreenLake Platform.
+
+Forgotten password - HPE GreenLake Platform
+Use this procedure if using HPE GreenLake Platform:
+
+Click the Need help signing in? > Forgot password? link, or go directly to: https://auth.hpe.com/signin/forgot-password.
+
+Passwords expire every 365 days. To change your password:
+
+Navigate to your profile: https://auth.hpe.com/profile/UserProfile.
+
+If you've forgotten your password, see I've forgotten my password.
+
+In the Password section, click Edit.
+
+Type your current and new password.
+
+Click Reset Password, or click Cancel to discard your changes.
+
+If you need additional help, contact support.
+
+
+Use the password reset option:
+
+On the Sign In page, click the Unlock Account? link, or go directly to: https://auth.hpe.com/signin/unlock.
+
+Type your email address into the field.
+
+Click Send Email. You will receive an email with instructions to unlock your account. If you do not receive the email, check Troubleshooting.
+
+If you need additional help, contact support.
+How do I set up multifactor authentication?
+Multifactor Authentication (MFA) increases your account security when signing in to HPE.
+
+To enable MFA, navigate to your profile: https://auth.hpe.com/profile/UserProfile.
+
+In the Multifactor Authentication section, click the toggle button to turn on Multifactor Authentication.
+
+Set up one of the following authentication methods:
+
+Okta Verify
+
+Use a push notification sent to the mobile app on your mobile device.
+
+Security Key or Biometric Authenticator
+
+Use a security key (USB or Bluetooth) or a biometric authenticator (Windows Hello, Touch ID).
+
+Google Authenticator
+
+Enter single-use code from the mobile app on your mobile device.
+
+
+The administrator of your company's email domain can set up Single Sign-On (SSO) with HPE GreenLake. If you are signing in with your company's credentials, use the Sign in with SSO button.
+
+Contact your organization’s HPE business representative or your email administrator for help with setting up an account.
