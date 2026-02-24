@@ -17,6 +17,10 @@ st.set_page_config(
 )
 
 st.title("💬 GreenLake Assist (RAG)")
+# reload document when file updated
+if st.button("🔄 Reload Document"):
+    st.cache_resource.clear()
+    st.rerun()
 
 # -------------------------
 # CHAT HISTORY
