@@ -63,7 +63,7 @@ def setup_rag():
     )
     split_docs = splitter.split_documents(docs)
 
-    # create embeddings (local free model)
+    # create embeddings
     embeddings = HuggingFaceEmbeddings(
         model_name="sentence-transformers/all-MiniLM-L6-v2"
     )
@@ -117,9 +117,12 @@ User Question:
 Helpful Answer:
 """
 
-    # generate response
-    response = llm.invoke(rag_prompt)
-    assistant_response = response.content
+    # generate response using ChatGroq
+    try:
+        response = llm(rag_prompt)  # use llm() instead of invoke()
+        assistant_response = response.content if hasattr(response, "content") else response
+    except Exception as e:
+        assistant_response = f"Sorry, I encountered an error: {e}"
 
     # save response
     st.session_state.chat_history.append({"role": "assistant", "content": assistant_response})
