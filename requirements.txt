@@ -1,11 +1,11 @@
-streamlit
-python-dotenv
+streamlit==1.32.0
+python-dotenv==1.0.1
 
-langchain>=0.1.0
-langchain-community>=0.0.30
-langchain-groq
+langchain==0.1.20
+langchain-community==0.0.38
+langchain-groq==0.1.4
 
-faiss-cpu
-sentence-transformers
-huggingface-hub
-tiktoken
+faiss-cpu==1.7.4
+sentence-transformers==2.6.1
+huggingface-hub==0.20.3
+tiktoken==0.6.0
