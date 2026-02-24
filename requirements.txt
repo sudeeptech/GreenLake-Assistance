@@ -9,3 +9,4 @@ faiss-cpu
 sentence-transformers
 huggingface-hub
 tiktoken
+langchain langchain-community
