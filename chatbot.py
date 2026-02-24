@@ -87,7 +87,7 @@ if user_prompt:
     )
 
     # retrieve relevant document chunks
-    docs = retriever.get_relevant_documents(user_prompt)
+    docs = retriever.invoke(user_prompt)
 
     # combine context
     context = "\n".join([doc.page_content for doc in docs])
