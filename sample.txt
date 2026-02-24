@@ -356,3 +356,20 @@ A Devices Assigned dialog appears.
 Click View Audit Log to check the audit logs for assignment activity details, otherwise, click Close.
 Click Finish.
 
+Removing device subscriptions from services
+Prerequisites
+You have a workspace administrator role or a role with permissions to modify subscriptions.
+
+About this task
+You can remove the subscription of a device from a service instance at any time.
+NOTE
+Removing assignments automatically removes the subscriptions for the devices.
+Procedure
+On the GreenLake cloud header, click the Global navigation menu global navigation menu icon.
+Select Devices > Devices Inventory.
+The Inventory page opens showing all devices in your inventory.
+Click the Assigned & Subscribed card to list all devices that are assigned and subscribed.
+Click the check boxes to select the devices that you want to unsubscribe.
+From the Actions drop-down, select Remove Assignment.
+On the Remove Assignment dialog box, click Remove service Assignments to confirm the removal of the assignments.
+
