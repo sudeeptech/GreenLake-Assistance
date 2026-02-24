@@ -98,18 +98,25 @@ if user_prompt:
 
     # RAG prompt (prevents hallucination)
     rag_prompt = f"""
-You are a helpful assistant.
+You are an internal company support assistant.
 
-Answer ONLY from the context below.
-If the answer is not in the context, say "I don't know".
+Follow these rules strictly:
+
+1. Answer ONLY from the provided context.
+2. If answer is not available → say "I don't know".
+3. Give clear, simple, user-friendly explanations.
+4. Format answers in steps or bullet points when possible.
+5. Use professional but easy language.
+6. Do not copy text directly — explain in your own words.
+7. Keep answers structured and helpful for employees.
 
 Context:
 {context}
 
-Question:
+User Question:
 {user_prompt}
 
-Answer:
+Helpful Answer:
 """
 
     # generate response
