@@ -218,3 +218,18 @@ Review and delete the tenant workspaces.
 Click the Convert to Standard Enterprise Mode button under the Requirements for a Standard Enterprises Workspace section.
 Click the Yes, Convert Now button.
 You are logged out of your current workspace and automatically redirected to the GreenLake login page.
+
+Password Reset Guide:
+
+Step 1: Go to the GreenLake workspace login page: https://greenlake.cloud/login
+Step 2: Click on "Forgot Password".
+Step 3: Enter your registered email address.
+Step 4: Check your email and click the reset link.
+Step 5: Enter a new password that meets the following requirements:
+   - At least 12 characters long
+   - Contains at least one uppercase letter
+   - Contains at least one lowercase letter
+   - Contains at least one number
+   - Contains at least one special character (e.g., !@#$%^&*)
+Step 6: Confirm your new password and click "Submit".
+Step 7: Log in with your new password.
