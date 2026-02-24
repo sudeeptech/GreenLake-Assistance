@@ -322,3 +322,18 @@ The Resources section lists the resources included in the RRP. Scope resources a
 The Role Assignments section lists the users and the role assignments where this RRP is applied. The list displays up to ten role assignments on the page; use the page numbers to view additional roles assigned to the user.
 
 
+Adding tags to devices using a CSV file
+About this task
+You can manually assign tags to devices once you have added the devices to your workspace. Alternatively, you can assign tags to networking and compute devices using a CSV file when you add these devices to your workspace.
+Procedure
+On the GreenLake cloud header, click the Global navigation menu global navigation menu icon.
+Select Devices > Devices Inventory.
+The Inventory page opens showing all devices in your inventory.
+Click Add Devices to add devices to your inventory.
+Select the Device Type from the drop-down menu.
+On the Upload CSV File page, provide details about each device you want to add, including the serial number and other identifying information. The details required vary according to the device type.
+You can add each device individually but, if you want to add multiple networking or compute devices to your workspace, use a CSV file. You can also assign tags to each device you include in the file.
+To add devices using a CSV file, select .CSV File for the Ownership Type.
+Click Download Sample File and review the device information required.
+Edit the sample file to add details for each of the devices you want to add. You can also specify tags for each device.
+
