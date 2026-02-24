@@ -80,3 +80,18 @@ Enter single-use code from the mobile app on your mobile device.
 The administrator of your company's email domain can set up Single Sign-On (SSO) with HPE GreenLake. If you are signing in with your company's credentials, use the Sign in with SSO button.
 
 Contact your organization’s HPE business representative or your email administrator for help with setting up an account.
+
+How do I change my password?
+Passwords expire every 365 days. To change your password:
+
+Navigate to your profile: https://auth.hpe.com/profile/UserProfile.
+
+If you've forgotten your password, see I've forgotten my password.
+
+In the Password section, click Edit.
+
+Type your current and new password.
+
+Click Reset Password, or click Cancel to discard your changes.
+
+If you need additional help, contact support.
