@@ -174,3 +174,37 @@ Only one subscription per service per workspace is required.
 Subscription may take time to provision.
 
 If subscription exists in another workspace, remove it before adding.
+
+Enabling the MSP mode
+
+Procedure
+Log in to your workspace as an administrator.
+On the GreenLake cloud header, click the workspace menu and then select Manage Workspace.
+Click Manage Workspace Type.
+The Manage workspace type page displays the types of workspaces supported by GreenLake and the Requirements to convert to a managed service provider workspace.
+There are four steps required to enable a managed service provider workspace.
+Step 1 - Check your eligibility
+
+Step 2 - Remove assignments and subscriptions from All Devices
+
+Step 3 - Remove all unsupported services
+
+Step 4 - Convert your workspace
+
+Click the Check Eligibility button.
+The Provide Workspace Details page appears where you can enter additional workspace information to determine if you can convert to a Managed Service Provider workspace.
+Provide the workspace details using the check boxes, fields, and drop-downs options. This is step one of a two-step process. Click Submit when you are done.
+After your eligibility is checked, a message appears indicating that you are eligible to convert to a Manage Service Provider workspace.
+Click Continue.
+NOTE
+Before you can convert to a Managed Service Provider workspace, you must complete the remaining steps in the conversion process.
+Complete Step 2 of the required steps to continue: Remove assignments and subscriptions from all devices. Click the Review Unsupported Service Managers button.
+If you have unsupported services, they are displayed on the next page.
+Agree to the terms about the removal of unsupported service instances.
+Click the Remove All Unsupported Services button.
+This completes Step 3 and displays the Manage Workspace Type page. You can now convert your workspace.
+Click the Convert to MSP mode button, Step 4. The Convert Your workspace message displays notifying you that your workspace will be unavailable during conversion, and you will be temporarily logged out.
+Click the Yes, Convert Now button.
+You are logged out of your current workspace and automatically redirected to the login page.
+Navigate to the workspace management page and click the Menu icon.
+The Global navigation menu global navigation menu icon in the GreenLake cloud header now contains a Tenants option.
