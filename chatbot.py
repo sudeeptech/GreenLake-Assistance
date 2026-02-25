@@ -119,9 +119,10 @@ Helpful Answer:
 """
 
     # -------------------------
-    # ✅ RAW Groq API CALL (works on all versions)
+    # ✅ Groq API CALL (fixed)
     # -------------------------
-    assistant_response = llm.complete(prompt=rag_prompt).text
+    completion = llm.complete(prompt=rag_prompt)
+    assistant_response = completion.response  # <-- FIXED: use .response
 
     # Save and display assistant response
     st.session_state.chat_history.append({"role": "assistant", "content": assistant_response})
