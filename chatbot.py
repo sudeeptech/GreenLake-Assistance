@@ -8,7 +8,6 @@ import streamlit as st
 from langchain_groq import ChatGroq
 from langchain_community.embeddings import HuggingFaceEmbeddings
 from langchain_community.document_loaders import TextLoader
-from langchain.text_splitters import RecursiveCharacterTextSplitter
 
 # -------------------------
 # LOAD ENV VARIABLES
@@ -44,13 +43,26 @@ llm = ChatGroq(
 )
 
 # -------------------------
-# RAG SETUP (in-memory) with try-except only on loading
+# SIMPLE PYTHON TEXT SPLITTER
+# -------------------------
+def split_text(text, chunk_size=500, overlap=50):
+    """Split text into chunks with overlap."""
+    chunks = []
+    start = 0
+    while start < len(text):
+        end = start + chunk_size
+        chunks.append(text[start:end])
+        start += chunk_size - overlap
+    return chunks
+
+# -------------------------
+# RAG SETUP (in-memory)
 # -------------------------
 @st.cache_resource
 def setup_rag():
     # Try to load the document
     try:
-        loader = TextLoader("sample.txt")  # Make sure sample.txt exists
+        loader = TextLoader("sample.txt")  # Ensure sample.txt exists
         docs = loader.load()
     except FileNotFoundError:
         print("Error: sample.txt not found!")
@@ -59,14 +71,18 @@ def setup_rag():
         print(f"Error loading document: {e}")
         return []
 
-    # If loading succeeds, continue splitting and embedding
-    splitter = RecursiveCharacterTextSplitter(chunk_size=500, chunk_overlap=50)
-    split_docs = splitter.split_documents(docs)
+    # Split documents into chunks
+    split_docs = []
+    for doc in docs:
+        chunks = split_text(doc.page_content, chunk_size=500, overlap=50)
+        for chunk in chunks:
+            split_docs.append({"page_content": chunk})
 
+    # Embeddings
     embeddings = HuggingFaceEmbeddings(model_name="sentence-transformers/all-MiniLM-L6-v2")
 
-    # Simple in-memory retriever
-    retriever = [{"doc": doc, "embedding": embeddings.embed_query(doc.page_content)} for doc in split_docs]
+    # In-memory retriever
+    retriever = [{"doc": doc, "embedding": embeddings.embed_query(doc["page_content"])} for doc in split_docs]
 
     return retriever
 
@@ -88,7 +104,7 @@ if user_prompt:
 
     # Retrieve relevant docs
     docs = simple_retrieve(user_prompt)
-    context = "\n".join([doc.page_content for doc in docs])
+    context = "\n".join([doc["page_content"] for doc in docs])
 
     # RAG prompt
     rag_prompt = f"""
