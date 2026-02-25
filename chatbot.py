@@ -40,7 +40,7 @@ llm = ChatGroq(
 )
 
 # -------------------------
-# RAG SETUP (in-memory, FAISS-free)
+# RAG SETUP (in-memory)
 # -------------------------
 @st.cache_resource
 def setup_rag():
