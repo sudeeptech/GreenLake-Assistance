@@ -126,9 +126,8 @@ User Question:
 Helpful Answer:
 """
 
-    # ✅ Use HumanMessage to avoid AttributeError
-    response = llm.generate([HumanMessage(content=rag_prompt)])
-    assistant_response = response.generations[0][0].text
+    # ✅ Correct: just use .predict() with string prompt
+    assistant_response = llm.predict(rag_prompt)
 
     # Save and display assistant response
     st.session_state.chat_history.append({"role": "assistant", "content": assistant_response})
