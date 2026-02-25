@@ -4,8 +4,10 @@ import os
 from dotenv import load_dotenv
 import streamlit as st
 
-# LangChain imports
+# Groq LLM
 from langchain_groq import ChatGroq
+
+# Embeddings & Document Loading
 from langchain_community.embeddings import HuggingFaceEmbeddings
 from langchain_community.document_loaders import TextLoader
 
@@ -37,16 +39,12 @@ for message in st.session_state.chat_history:
 # -------------------------
 # LLM INIT (Groq)
 # -------------------------
-llm = ChatGroq(
-    model="llama-3.3-70b-versatile",
-    temperature=0.0,
-)
+llm = ChatGroq(model="llama-3.3-70b-versatile", temperature=0.0)
 
 # -------------------------
 # SIMPLE PYTHON TEXT SPLITTER
 # -------------------------
 def split_text(text, chunk_size=500, overlap=50):
-    """Split text into chunks with overlap."""
     chunks = []
     start = 0
     while start < len(text):
@@ -61,7 +59,7 @@ def split_text(text, chunk_size=500, overlap=50):
 @st.cache_resource
 def setup_rag():
     try:
-        loader = TextLoader("sample.txt")  # Ensure sample.txt exists
+        loader = TextLoader("sample.txt")
         docs = loader.load()
     except FileNotFoundError:
         print("Error: sample.txt not found!")
@@ -87,6 +85,8 @@ def simple_retrieve(query):
     """Return top 3 document chunks (small dataset)"""
     return [item["doc"] for item in retriever][:3]
 
+# -------------------------
+# USER INPUT
 # -------------------------
 user_prompt = st.chat_input("Ask from document...")
 
@@ -118,9 +118,10 @@ User Question:
 Helpful Answer:
 """
 
-    # ✅ Correct call using .generate()
-    response = llm.generate([{"role": "user", "content": rag_prompt}])
-    assistant_response = response.generations[0][0].text
+    # -------------------------
+    # ✅ RAW Groq API CALL (works on all versions)
+    # -------------------------
+    assistant_response = llm.complete(prompt=rag_prompt).text
 
     # Save and display assistant response
     st.session_state.chat_history.append({"role": "assistant", "content": assistant_response})
