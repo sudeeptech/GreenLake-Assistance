@@ -76,7 +76,7 @@ After removal:
 
 ---
 
-## 2. MSP Mode (Managed Service Provider Mode)
+## 2.How to convert MSP Mode (Managed Service Provider Mode)
 
 ### Enabling MSP Mode
 
