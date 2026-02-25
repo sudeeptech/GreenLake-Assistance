@@ -118,13 +118,12 @@ User Question:
 Helpful Answer:
 """
 
-    # -------------------------
-    # ✅ Groq API CALL (fixed)
-    # -------------------------
-    completion = llm.complete(prompt=rag_prompt)
-    assistant_response = completion.response  # <-- FIXED: use .response
+   # -------------------------
+# ✅ Groq API CALL (fixed for latest LangChain)
+# -------------------------
+assistant_response = llm(rag_prompt)  # returns string directly
 
-    # Save and display assistant response
-    st.session_state.chat_history.append({"role": "assistant", "content": assistant_response})
-    with st.chat_message("assistant"):
-        st.markdown(assistant_response)
+# Save and display assistant response
+st.session_state.chat_history.append({"role": "assistant", "content": assistant_response})
+with st.chat_message("assistant"):
+    st.markdown(assistant_response)
