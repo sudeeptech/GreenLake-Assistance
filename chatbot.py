@@ -20,7 +20,7 @@ load_dotenv()
 # STREAMLIT UI
 # -------------------------
 st.set_page_config(page_title="GreenLake Assist", page_icon="🤖")
-st.title("💬 GreenLake Assist (RAG from sample.txt)")
+st.title("💬 GreenLake AI Assist ")
 
 # -------------------------
 # CHAT HISTORY
