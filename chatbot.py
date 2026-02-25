@@ -8,7 +8,7 @@ import streamlit as st
 from langchain_groq import ChatGroq
 from langchain_community.embeddings import HuggingFaceEmbeddings
 from langchain_community.document_loaders import TextLoader
-from langchain.schema import HumanMessage  # ✅ Add this
+from langchain_core.messages import HumanMessage
 
 # -------------------------
 # LOAD ENV VARIABLES
