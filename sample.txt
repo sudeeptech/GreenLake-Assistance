@@ -1,535 +1,233 @@
-Formatted Content for sample.txt (Copy Paste This)
-About Service Subscriptions — HPE GreenLake
+# HPE GreenLake Knowledge Base
 
-Service subscriptions allow users to activate and use services within a workspace.
-A subscription key is required to enable a service.
+## 1. Service Subscriptions
 
-Only one subscription is needed per service and workspace.
-When a service is deployed, the subscription is automatically applied.
+### About Service Subscriptions
 
-Prerequisites for Adding Service Subscription
+* Service subscriptions allow users to activate and use services within a workspace.
+* A subscription key is required to enable a service.
+* Only one subscription is needed per service per workspace.
+* When a service is deployed, the subscription is automatically applied.
 
-User must have Workspace Administrator role OR permission to modify subscriptions.
+### Prerequisites for Adding Service Subscription
 
-Services must be set up before adding a subscription.
+* User must have **Workspace Administrator role** OR permission to modify subscriptions.
+* Services must be set up before adding a subscription.
+* Subscription key must be received from HPE via email.
 
-Subscription key must be received from HPE via email.
+### Steps to Add Service Subscription
 
-Steps to Add Service Subscription
-Step 1 — Open Service Subscription Page
+#### Step 1 — Open Service Subscription Page
 
-Login to GreenLake Cloud.
+* Login to GreenLake Cloud.
+* Click Global Navigation Menu.
+* Navigate: **Services → Manage Service Subscription**.
+* Click **Add Service Subscription**.
 
-Click Global Navigation Menu.
+#### Step 2 — Enter Subscription Key
 
-Go to:
+* Enter the subscription key received via email.
+* Click Next.
 
-Services → Manage Service Subscription.
+#### Step 3 — Assign Tags (Optional)
 
-Click Add Service Subscription.
+* Select or create tag name and value.
+* Maximum 50 tags allowed.
+* Click Next.
 
-Step 2 — Enter Subscription Key
+#### Step 4 — Manage Showback Rates (Optional)
 
-Enter the subscription key received via email.
+* Used for usage monitoring services.
+* Enter effective date and rate if required.
+* Click Next.
 
-Click Next.
+#### Step 5 — Review and Finish
 
-Step 3 — Assign Tags (Optional)
+* Verify all details.
+* Click Finish.
 
-Select or create tag name.
+### Viewing Service Subscriptions
 
-Select or create tag value.
+Navigate to: **Services → Manage Service Subscription**
 
-Click Assign.
+You can view:
 
-Maximum 50 tags allowed.
+* Subscription status
+* Expiration date
+* Subscription tier
+* Subscription type
 
-Click Next.
+### Removing Service Subscription
 
-Step 4 — Manage Showback Rates (Optional)
+Prerequisite: Workspace Administrator role required.
 
-Used only for usage monitoring services.
+Steps:
 
-Can skip this step.
-
-Enter effective date and rate if required.
-
-Click Next.
-
-Step 5 — Review and Finish
-
-Verify all details.
-
-Click Finish.
-
-Service subscription is added to workspace.
-
-Viewing Service Subscriptions
-
-Go to Services → Manage Service Subscription.
-
-View:
-
-Subscription status
-
-Expiration date
-
-Subscription tier
-
-Subscription type.
-
-Removing Service Subscription from Workspace
-Prerequisites
-
-Workspace Administrator role required.
-
-Steps
-
-Go to Services → Manage Service Subscription.
-
-Search for subscription.
-
-Select subscription.
-
-Click Actions → Remove Subscriptions.
-
-Confirm removal.
+* Go to Services → Manage Service Subscription.
+* Select subscription.
+* Click Actions → Remove Subscriptions.
+* Confirm removal.
 
 After removal:
 
-Subscription can be added to another workspace.
+* Subscription can be added to another workspace.
+* Tags are removed.
+* Action recorded in audit log.
 
-Tags are removed.
+---
 
-Action recorded in audit log.
+## 2. MSP Mode (Managed Service Provider Mode)
 
-Managing Tags for Service Subscriptions
+### Enabling MSP Mode
 
-Users can create, assign, or remove tags.
+* MSP mode allows service providers to manage multiple customer environments.
 
-Steps
+#### Steps
 
-Go to Services → Manage Service Subscription.
+1. Login as workspace administrator.
+2. Navigate: Workspace Menu → Manage Workspace.
+3. Click Manage Workspace Type.
+4. Complete required steps:
 
-Select subscription.
+   * Check eligibility
+   * Remove assignments and subscriptions
+   * Remove unsupported services
+   * Convert workspace
+5. Click **Convert to MSP mode** button.
+6. Confirm conversion.
 
-Click Actions → Manage Tags.
+Workspace becomes temporarily unavailable during conversion.
 
-Add or remove tags.
+### Disabling MSP Mode
 
-Click Save Changes.
+* Login as administrator.
+* Go to Manage Workspace → Manage Workspace Type.
+* Review and delete tenant workspaces.
+* Click **Convert to Standard Enterprise Mode**.
+* Confirm conversion.
 
-Maximum 50 tags allowed.
+---
 
-Viewing and Downloading Subscription Data
+## 3. Password Reset Guide
 
-Users can export subscription details.
+### Steps
 
-Steps
+1. Go to: https://greenlake.cloud/login
+2. Click **Forgot Password**.
+3. Enter registered email.
+4. Click reset link from email.
+5. Create new password with:
 
-Go to Services → Manage Service Subscription.
+   * Minimum 12 characters
+   * One uppercase letter
+   * One lowercase letter
+   * One number
+   * One special character
+6. Submit and login.
 
-Apply filters if required.
+---
 
-Click Actions → Export.
+## 4. User Management
 
-Enter email address.
+### Inviting Users
 
-Generate report.
+* Go to Manage Workspace → Workspace Identity & Access.
+* Click Invite Users.
+* Send sign-up link.
 
-Download report from email.
+### Deleting a User
 
-Report contains:
+* Go to Workspace Identity & Access → Users.
+* Select user.
+* Click Delete.
 
-Subscription tier
+### Viewing Audit Logs
 
-Status
+* Go to Manage Workspace → Audit Log.
+* View login, logout, and modification activity.
 
-Expiration date
+### Creating User Roles
 
-Subscription type.
+* Go to Workspace Identity & Access → Roles & Permissions.
+* Click Create Role.
+* Select service and permissions.
+* Review and finish.
 
-Adding Services to Workspace (Service Deployment)
+---
 
-Service subscription works only after service deployment.
+## 5. Device Management
 
-Steps
+### Adding Devices Using CSV
 
-Go to Services → Service Catalog.
+* Navigate: Devices → Devices Inventory.
+* Click Add Devices.
+* Upload CSV with device details.
+* Assign tags if needed.
 
-Select service.
+### Assigning Devices to Service
 
-Click Launch.
+* Go to Devices Inventory.
+* Select devices.
+* Click Assign to Service.
+* Select workspace and service instance.
 
-Follow Deploy Service wizard.
+### Removing Device Subscription
 
-If user lacks permission → contact administrator.
+* Go to Devices Inventory → Assigned & Subscribed.
+* Select device.
+* Click Remove Assignment.
 
-Important Notes
+---
 
-Subscription is automatically applied when service is deployed.
+## 6. Support Email Templates
 
-Only one subscription per service per workspace is required.
+### Case Acknowledgment (Initial Response)
 
-Subscription may take time to provision.
+* Confirms case creation.
+* Requests required information if missing.
 
-If subscription exists in another workspace, remove it before adding.
+### Follow-up Templates
 
-Enabling the MSP mode
+* Request missing details.
+* Confirm POA implementation.
+* Confirm issue resolution.
 
-Procedure
-Log in to your workspace as an administrator.
-On the GreenLake cloud header, click the workspace menu and then select Manage Workspace.
-Click Manage Workspace Type.
-The Manage workspace type page displays the types of workspaces supported by GreenLake and the Requirements to convert to a managed service provider workspace.
-There are four steps required to enable a managed service provider workspace.
-Step 1 - Check your eligibility
+### Misrouted Case Handling
 
-Step 2 - Remove assignments and subscriptions from All Devices
+* Request serial number.
+* Route to correct support team.
 
-Step 3 - Remove all unsupported services
+---
 
-Step 4 - Convert your workspace
+## 7. Common Troubleshooting Scenarios
 
-Click the Check Eligibility button.
-The Provide Workspace Details page appears where you can enter additional workspace information to determine if you can convert to a Managed Service Provider workspace.
-Provide the workspace details using the check boxes, fields, and drop-downs options. This is step one of a two-step process. Click Submit when you are done.
-After your eligibility is checked, a message appears indicating that you are eligible to convert to a Manage Service Provider workspace.
-Click Continue.
-NOTE
-Before you can convert to a Managed Service Provider workspace, you must complete the remaining steps in the conversion process.
-Complete Step 2 of the required steps to continue: Remove assignments and subscriptions from all devices. Click the Review Unsupported Service Managers button.
-If you have unsupported services, they are displayed on the next page.
-Agree to the terms about the removal of unsupported service instances.
-Click the Remove All Unsupported Services button.
-This completes Step 3 and displays the Manage Workspace Type page. You can now convert your workspace.
-Click the Convert to MSP mode button, Step 4. The Convert Your workspace message displays notifying you that your workspace will be unavailable during conversion, and you will be temporarily logged out.
-Click the Yes, Convert Now button.
-You are logged out of your current workspace and automatically redirected to the login page.
-Navigate to the workspace management page and click the Menu icon.
-The Global navigation menu global navigation menu icon in the GreenLake cloud header now contains a Tenants option.
-
-Disabling the MSP mode
-
-Log in to your workspace as an administrator.
-On the Manage Workspace page, select the Manage Workspace Type link on your workspace card.
-Under the Requirements for a Standard Enterprise Workspace section, click Review Tenant Workspaces.
-Review and delete the tenant workspaces.
-Click the Convert to Standard Enterprise Mode button under the Requirements for a Standard Enterprises Workspace section.
-Click the Yes, Convert Now button.
-You are logged out of your current workspace and automatically redirected to the GreenLake login page.
-
-Password Reset Guide:
-
-Step 1: Go to the GreenLake workspace login page: https://greenlake.cloud/login
-Step 2: Click on "Forgot Password".
-Step 3: Enter your registered email address.
-Step 4: Check your email and click the reset link.
-Step 5: Enter a new password that meets the following requirements:
-   - At least 12 characters long
-   - Contains at least one uppercase letter
-   - Contains at least one lowercase letter
-   - Contains at least one number
-   - Contains at least one special character (e.g., !@#$%^&*)
-Step 6: Confirm your new password and click "Submit".
-Step 7: Log in with your new password.
-
-Disabling the MSP mode
-Log in to your workspace as an administrator.
-On the Manage Workspace page, select the Manage Workspace Type link on your workspace card.
-Under the Requirements for a Standard Enterprise Workspace section, click Review Tenant Workspaces.
-Review and delete the tenant workspaces.
-Click the Convert to Standard Enterprise Mode button under the Requirements for a Standard Enterprises Workspace section.
-Click the Yes, Convert Now button.
-You are logged out of your current workspace and automatically redirected to the GreenLake login page.
-
-Inviting users
-About this task
-Account administrators can easily invite team members to join GreenLake cloud by sending them a sign-up link in an email using either of the following options:
-The Invite users card on the Quick Actions section of the Workspace identity & access page
-
-The Invite Users button on the Workspace identity & access > Users page
-
-NOTE
-In an MSP environment, user access and privileges are based on the workspace from which the invite is issued. Users invited from a tenant workspace are tenant users and users invited from the MSP workspace are MSP users.
-Procedure
-On the GreenLake cloud header, click the workspace menu and then select Manage Workspace.
-On the Manage Workspace page, click the Workspace identity & access card.
-On the Workspace identity & access page, click the Invite Users card.
-The Invite User window opens.
-
-Deleting a user
-Procedure
-On the GreenLake cloud header, click the workspace menu and then select Manage Workspace.
-Click the Workspace identity & access card and then on the Workspace identity & access page, click the Users card.
-The Users page displays a list of verified and unverified users.
-Select the check box next to the name of a user and click the ellipses (…) and then select Delete.
-Confirm the user deletion in the Delete User action dialog.
-
-
-Viewing audit logs for users
-About this task
-Audit logs are generated when a new user is created and an existing user is modified or deleted from the GreenLake cloud workspace. It also records the login and logout activities of users.
-
-Procedure
-On the GreenLake cloud header, click the workspace menu and then select Manage Workspace.
-On the Manage Workspace page, click the Audit Log card.
-The Audit Log page appears.
-To filter audit logs about user activity, use the filter or click the Actions > Edit Columns link, and select up to six different columns.
-To sort audit logs by user name, click the Username column heading.
-
-Creating user roles
-About this task
-You can create custom roles for specific services on the GreenLake cloud and add permissions to define the access privileges for users assigned the role.
-Procedure
-On the GreenLake cloud header, click the workspace menu and then select Manage Workspace.
-On the Manage Workspace page, click the Workspace identity & access card.
-On the Workspace identity & access page, click the Roles & Permissions card.
-The Roles & Permissions page appears.
-Click the Create role button.
-NOTE
-Use the Duplicate existing role option to make a copy of an existing custom role and modify it to suit your needs. Built-in or predefined roles cannot be duplicated or edited.
-From the Service drop-down list, select the service to which the role applies.
-Click Next.
-The Create Role Wizard appears.
-Follow the directions on the Create Role Wizard to complete the role setup.
-Add Name & Description screen—add a role name and description and click Next.
-Add <Service> Permissions screens—click Add Permissions to access the permissions screens where you can select the actions that a user with this role can perform in the selected service. After adding permissions, click Next to continue.
-Review & Create screen—this screen shows you the role details, including the permission granted for each role. Use this screen to review your role configuration before creating it. You can change the role name and permissions using the Modify link.
-Click Finish to create the role.
-The new role is added to the Roles & Permissions page. Use the search or sort the list by name to find the newly created role in the list.
-
-Viewing resource restriction policy details
-Procedure
-On the GreenLake cloud header, click the workspace menu and then select Manage Workspace.
-On the Manage Workspace page, click the Workspace identity & access card.
-On the Workspace identity & access page, click the Resource Restriction Policy card.
-The Resource Restriction Policies page displays a list of resource restriction policies (RRP) and their information.
-Name
-The name of the RRP
-Description
-A brief description of the RRP
-Service
-The service for which the RRP defines access limits
-Date Created
-The date the RRP was created
-The Create Resource Restriction Policy button accesses a wizard that steps you through the process for creating a new RRP.
-Click an RRP to display its details.
-The Details section provides basic information from the table view on the main RRP page.
-
-The Resources section lists the resources included in the RRP. Scope resources are listed in bold with their member scope instances below them.
-
-The Role Assignments section lists the users and the role assignments where this RRP is applied. The list displays up to ten role assignments on the page; use the page numbers to view additional roles assigned to the user.
-
-
-Adding tags to devices using a CSV file
-About this task
-You can manually assign tags to devices once you have added the devices to your workspace. Alternatively, you can assign tags to networking and compute devices using a CSV file when you add these devices to your workspace.
-Procedure
-On the GreenLake cloud header, click the Global navigation menu global navigation menu icon.
-Select Devices > Devices Inventory.
-The Inventory page opens showing all devices in your inventory.
-Click Add Devices to add devices to your inventory.
-Select the Device Type from the drop-down menu.
-On the Upload CSV File page, provide details about each device you want to add, including the serial number and other identifying information. The details required vary according to the device type.
-You can add each device individually but, if you want to add multiple networking or compute devices to your workspace, use a CSV file. You can also assign tags to each device you include in the file.
-To add devices using a CSV file, select .CSV File for the Ownership Type.
-Click Download Sample File and review the device information required.
-Edit the sample file to add details for each of the devices you want to add. You can also specify tags for each device.
-
-Assigning devices to a service
-About this task
-The Inventory section on the Devices page enables you to assign, update, or even remove the subscription of a device from a service instance.
-
-Procedure
-On the GreenLake cloud header, click the Global navigation menu global navigation menu icon.
-Select Devices > Devices Inventory.
-The Inventory page opens showing all devices in your inventory.
-Click the Require Service Assignments card.
-The inventory list displays all devices requiring assignments.
-Use the check boxes to select the devices you want to assign to a service.
-From the Actions drop-down, click Assign to Service.
-If you have multiple workspaces, the Select a Workspace page appears with the list of your existing workspaces.
-Select a workspace and click Next.
-On the Assign Devices to Service Instance page, from the drop-down lists, select a Service instance and a Region (for the service instance) to assign your devices.
-A Devices Assigned dialog appears.
-Click View Audit Log to check the audit logs for assignment activity details, otherwise, click Close.
-Click Finish.
-
-Removing device subscriptions from services
-Prerequisites
-You have a workspace administrator role or a role with permissions to modify subscriptions.
-
-About this task
-You can remove the subscription of a device from a service instance at any time.
-NOTE
-Removing assignments automatically removes the subscriptions for the devices.
-Procedure
-On the GreenLake cloud header, click the Global navigation menu global navigation menu icon.
-Select Devices > Devices Inventory.
-The Inventory page opens showing all devices in your inventory.
-Click the Assigned & Subscribed card to list all devices that are assigned and subscribed.
-Click the check boxes to select the devices that you want to unsubscribe.
-From the Actions drop-down, select Remove Assignment.
-On the Remove Assignment dialog box, click Remove service Assignments to confirm the removal of the assignments.
-
-1. Initial Response – Customer Has Not Shared Required Details
-Subject: GreenLake Platform Support Team | Case Acknowledgment – [Case ID]
-Hello [Customer Name],
-Thank you for contacting the GreenLake Platform Support Team.
-This email confirms that we have received your request regarding [brief description of the issue], and your case has been created under reference number [Case ID].
-To proceed with our investigation, kindly provide the following information:
-• [List of required details]
-If you have any additional observations that may help expedite the process, please feel free to reply to this email.
-________________________________________
-2. Initial Response – All Required Information Provided
-Subject: GreenLake Platform Support Team | Case Acknowledgment – [Case ID]
-Hello [Customer Name],
-Thank you for contacting the GreenLake Platform Support Team.
-We confirm receipt of your request regarding [brief description of the issue], and the case has been logged under reference number [Case ID].
-We are currently reviewing the information provided and will update you shortly. Should you have any additional inputs, please feel free to reply to this email.
-________________________________________
-3. First Follow-up – Requesting Missing Details
-Subject: GreenLake Platform Support Team | Follow-up on Case [Case ID] – Additional Information Required
-Hello [Customer Name],
-I hope you are doing well.
-This is a follow-up regarding your support case [Case ID] related to [brief description of the issue].
-To continue with our analysis, we kindly request the pending information at your earliest convenience.
-Your prompt response will help us assist you more effectively.
-________________________________________
-4. First Follow-up – When a POA Has Been Shared
-Subject: GreenLake Platform Support Team | Follow-up on Case [Case ID] – POA Confirmation
-Hello [Customer Name],
-I hope you are doing well.
-Could you please confirm if the proposed Plan of Action (POA) has been implemented and whether it resolved the issue?
-We would appreciate an update at your earliest convenience.
-________________________________________
-5. First Follow-up – After Issue Resolution
-Subject: GreenLake Platform Support Team | Follow-up on Case [Case ID] – Resolution Confirmation
-Hello [Customer Name],
-I hope you are doing well.
-We would like to confirm whether the solution provided has resolved the reported issue and if everything is operating as expected.
-Please let us know if you are still experiencing any concerns.
-________________________________________
-6. Misroutes – Case Not in Platform Team Scope (Serial Number Required)
-Subject: Action Required – Additional Details Needed (Case [Case ID])
-Hello [Customer Name],
-Upon reviewing your request, we found that the reported issue does not fall under the scope of the Platform Team.
-To help us engage the appropriate Server, Storage, or relevant Support Team, kindly share the serial number of the affected device.
-________________________________________
-7. Misroutes – Serial Number Available
-Subject: Case Update – Routing to Appropriate Team
-Hello [Customer Name],
-Upon reviewing your request, we found that the reported issue does not fall under the scope of the Platform Team.
-We will be routing the case to the appropriate Server, Storage, or relevant Support Team for further assistance. They will contact you with the next steps.
-
-
-POA and Troubleshooting Task 
-
-1. Unable to Onboard Device
-Details
-•	Workspace Name:
-•	Issue: Unable to onboard device
-•	Workspace ID:
-•	Workspace Type (Standalone/MSP):
-•	Number of Devices Affected:
-•	Device S/N (list all if multiple):
-Troubleshooting Steps
-•	Verified device details in CCS and identified that it was mapped to a different workspace.
-•	Requested proof of purchase from the customer and reviewed the submitted documentation.
-•	Validated the device details against the proof of purchase.
-•	Submitted a SharePoint request to transfer the device to the correct workspace.
-Plan of Action (POA)
-Validated device ownership via proof of purchase and submitted a SharePoint request to transfer the device to the customer’s workspace.
-________________________________________
-2. GT Block
-Details
-•	Workspace Name:
-•	Issue: GT Blocked
-•	Workspace ID:
-•	Workspace Type (Standalone/MSP):
-Troubleshooting Steps
-•	Reviewed customer logs regarding workspace access issues.
-•	Checked the workspace status in CCS Manage.
-•	Confirmed that the workspace was in a blocked state.
-•	Raised a TD ticket to remove the block and restore access.
-Plan of Action (POA)
-Raised TD ticket XXX for workspace XXXX to remove the block and restore access.
-________________________________________
-3. License Query (Subscription Key Inquiry)
-Details
-•	Workspace Name: NA
-•	Issue: Subscription key inquiry / unable to add key
-•	Workspace ID:
-•	Workspace Type (Standalone/MSP):
-•	Subscription Key: XX
-Troubleshooting Steps
-•	Verified the subscription key details in CCS.
-•	Confirmed that subscription key XX is not assigned to any workspace.
-•	Communicated the findings to the customer.
-Plan of Action (POA)
-Validated in CCS that subscription key XX is unassigned and informed the customer accordingly.
-________________________________________
-4. Unable to Add Subscription Key (Key Assigned to Different Workspace)
-Details
-•	Workspace Name:
-•	Issue: Unable to add subscription key
-•	Workspace ID:
-•	Workspace Type (Standalone/MSP): NA
-•	Subscription Key:
-Troubleshooting Steps
-•	Verified the key details in CCS and found that it was assigned to a different workspace.
-•	Requested proof of purchase or HPE order number from the customer.
-•	Validated the subscription key against the provided documentation.
-•	Submitted a SharePoint request to transfer the key to the correct workspace.
-Plan of Action (POA)
-Confirmed key ownership, validated supporting documents, and raised a SharePoint request to transfer the subscription key to the correct workspace.
-________________________________________
-5. MFA Reset
-Details
-•	Workspace Name: NA
-•	Issue: MFA Reset
-•	Workspace ID:
-•	Workspace Type (Standalone/MSP):
-•	Number of Devices Affected:
-•	Device S/N:
-•	Subscription Key: XX
-Troubleshooting Steps
-•	Verified user ID XXX@XXX in OKTA and reviewed the active authenticators.
-•	Requested confirmation from the user to proceed with the MFA reset.
-•	Reset the authenticator upon receiving approval.
-•	Informed the customer and advised them to attempt login again.
-Plan of Action (POA)
-Obtained user consent, reset MFA settings in OKTA, and notified the customer to retry logging in.
-________________________________________
-6. Unable to Reset Password
-Details
-•	Workspace Name:
-•	Issue: Password Reset
-•	Workspace ID:
-•	Workspace Type (Standalone/MSP):
-Troubleshooting Steps
-•	Verified user ID XXX@XXX in CCS and confirmed CCS login usage.
-•	Identified that the account was in password reset mode and reviewed OKTA logs.
-•	Confirmed the login failure with GreenLake.
-•	Obtained user approval to proceed with the password reset.
-•	Initiated the reset and shared the password reset link.
-•	Advised the customer to complete the reset and try logging in again.
-Plan of Action (POA)
-Reviewed account status, obtained user approval, performed password reset, shared the reset link, and advised the customer to retry login.
-________________________________________
-7. No Roles Assigned / Unable to Access Application
-Details
-•	Workspace Name:
-•	Issue: No roles assigned / Unable to access application
-•	Workspace ID:
-•	Workspace Type (Standalone/MSP):
-Troubleshooting Steps
-•	Verified the user ID in CCS under the respective workspace.
-•	Reviewed the roles assigned to the user.
-•	Identified that only the Workspace Member role was assigned / no application role was assigned.
-•	Advised the customer to contact the Workspace Administrator to assign the appropriate Workspace role (Administrator / Operator / Observer) or the required application role.
-Plan of Action (POA)
-Confirmed that only the XXX role was assigned and no application role was configured; advised the customer to work with the Workspace Administrator to assign the correct role.
+### Unable to Onboard Device
 
+* Verify device ownership.
+* Request proof of purchase.
+* Transfer device if required.
 
+### GT Block
+
+* Check workspace status.
+* Raise ticket to unblock.
+
+### License Query
+
+* Verify subscription key.
+* Confirm assignment status.
+
+### MFA Reset
+
+* Verify user.
+* Reset authenticator with approval.
+
+### Password Reset Issue
+
+* Check account status.
+* Share reset link.
+
+### No Roles Assigned
+
+* Verify assigned roles.
+* Contact workspace administrator.
