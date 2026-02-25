@@ -89,11 +89,9 @@ def simple_retrieve(query):
 
 # -------------------------
 # USER INPUT
-# -------------------------
 user_prompt = st.chat_input("Ask from document...")
 
 if user_prompt:
-    # Display user message
     st.chat_message("user").markdown(user_prompt)
     st.session_state.chat_history.append({"role": "user", "content": user_prompt})
 
@@ -101,7 +99,6 @@ if user_prompt:
     docs = simple_retrieve(user_prompt)
     context = "\n".join([doc["page_content"] for doc in docs])
 
-    # RAG prompt
     rag_prompt = f"""
 You are an internal company support assistant.
 
@@ -120,10 +117,10 @@ User Question:
 Helpful Answer:
 """
 
-    # ✅ Use .predict() safely with ChatGroq
-    assistant_response = llm.predict(rag_prompt)
+    # ✅ Use .generate() with list of dicts
+    response = llm.generate([{"role": "user", "content": rag_prompt}])
+    assistant_response = response.generations[0][0].text
 
-    # Save and display assistant response
     st.session_state.chat_history.append({"role": "assistant", "content": assistant_response})
     with st.chat_message("assistant"):
         st.markdown(assistant_response)
