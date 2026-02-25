@@ -8,7 +8,6 @@ import streamlit as st
 from langchain_groq import ChatGroq
 from langchain_community.embeddings import HuggingFaceEmbeddings
 from langchain_community.document_loaders import TextLoader
-from langchain_core.messages import HumanMessage
 
 # -------------------------
 # LOAD ENV VARIABLES
@@ -61,9 +60,8 @@ def split_text(text, chunk_size=500, overlap=50):
 # -------------------------
 @st.cache_resource
 def setup_rag():
-    # Try to load the document
     try:
-        loader = TextLoader("sample.txt")  # Make sure sample.txt exists
+        loader = TextLoader("sample.txt")  # Ensure sample.txt exists
         docs = loader.load()
     except FileNotFoundError:
         print("Error: sample.txt not found!")
@@ -72,17 +70,13 @@ def setup_rag():
         print(f"Error loading document: {e}")
         return []
 
-    # Split documents into chunks
     split_docs = []
     for doc in docs:
         chunks = split_text(doc.page_content, chunk_size=500, overlap=50)
         for chunk in chunks:
             split_docs.append({"page_content": chunk})
 
-    # Embeddings
     embeddings = HuggingFaceEmbeddings(model_name="sentence-transformers/all-MiniLM-L6-v2")
-
-    # In-memory retriever
     retriever = [{"doc": doc, "embedding": embeddings.embed_query(doc["page_content"])} for doc in split_docs]
 
     return retriever
@@ -90,7 +84,7 @@ def setup_rag():
 retriever = setup_rag()
 
 def simple_retrieve(query):
-    # Return top 3 documents (for small datasets)
+    """Return top 3 document chunks (small dataset)"""
     return [item["doc"] for item in retriever][:3]
 
 # -------------------------
@@ -126,7 +120,7 @@ User Question:
 Helpful Answer:
 """
 
-    # ✅ Correct: just use .predict() with string prompt
+    # ✅ Use .predict() safely with ChatGroq
     assistant_response = llm.predict(rag_prompt)
 
     # Save and display assistant response
