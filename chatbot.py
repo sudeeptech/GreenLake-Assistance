@@ -62,7 +62,7 @@ def split_text(text, chunk_size=500, overlap=50):
 def setup_rag():
     # Try to load the document
     try:
-        loader = TextLoader("sample.txt")  # Ensure sample.txt exists
+        loader = TextLoader("sample.txt")  # Make sure sample.txt exists
         docs = loader.load()
     except FileNotFoundError:
         print("Error: sample.txt not found!")
@@ -125,8 +125,9 @@ User Question:
 Helpful Answer:
 """
 
-    # Get assistant response
-    assistant_response = llm.predict(rag_prompt)
+    # Use .generate() for Groq
+    response = llm.generate([{"role": "user", "content": rag_prompt}])
+    assistant_response = response.generations[0][0].text
 
     # Save and display assistant response
     st.session_state.chat_history.append({"role": "assistant", "content": assistant_response})
