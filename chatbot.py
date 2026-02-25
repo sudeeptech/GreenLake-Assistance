@@ -15,6 +15,8 @@ from langchain_community.document_loaders import TextLoader
 # LOAD ENV VARIABLES
 # -------------------------
 load_dotenv()
+# Ensure your GROQ_API_KEY is set in .env or environment
+# GROQ_API_KEY=your_key_here
 
 # -------------------------
 # STREAMLIT PAGE SETUP
@@ -37,9 +39,18 @@ for message in st.session_state.chat_history:
         st.markdown(message["content"])
 
 # -------------------------
-# LLM INIT (Groq)
+# LLM INIT (Groq) safely
 # -------------------------
-llm = ChatGroq(model="llama-3.3-70b-versatile", temperature=0.0)
+@st.cache_resource
+def get_llm():
+    try:
+        llm = ChatGroq(model="llama-3.3-70b-versatile", temperature=0.0)
+        return llm
+    except Exception as e:
+        st.error(f"Failed to initialize LLM: {e}")
+        return None
+
+llm = get_llm()
 
 # -------------------------
 # SIMPLE PYTHON TEXT SPLITTER
@@ -62,10 +73,10 @@ def setup_rag():
         loader = TextLoader("sample.txt")
         docs = loader.load()
     except FileNotFoundError:
-        print("Error: sample.txt not found!")
+        st.error("Error: sample.txt not found!")
         return []
     except Exception as e:
-        print(f"Error loading document: {e}")
+        st.error(f"Error loading document: {e}")
         return []
 
     split_docs = []
@@ -83,6 +94,8 @@ retriever = setup_rag()
 
 def simple_retrieve(query):
     """Return top 3 document chunks (small dataset)"""
+    if not retriever:
+        return []
     return [item["doc"] for item in retriever][:3]
 
 # -------------------------
@@ -97,7 +110,10 @@ if user_prompt:
 
     # Retrieve relevant docs
     docs = simple_retrieve(user_prompt)
-    context = "\n".join([doc["page_content"] for doc in docs])
+    if docs:
+        context = "\n".join([doc["page_content"] for doc in docs])
+    else:
+        context = ""
 
     # RAG prompt
     rag_prompt = f"""
@@ -118,12 +134,21 @@ User Question:
 Helpful Answer:
 """
 
-   # -------------------------
-# ✅ Groq API CALL (fixed for latest LangChain)
-# -------------------------
-assistant_response = llm(rag_prompt)  # returns string directly
+    # -------------------------
+    # Call LLM safely
+    # -------------------------
+    if llm:
+        try:
+            assistant_response = llm(rag_prompt)  # returns string directly
+            if not assistant_response.strip():
+                assistant_response = "I don't know."
+        except Exception as e:
+            st.error(f"Error generating response: {e}")
+            assistant_response = "I don't know."
+    else:
+        assistant_response = "LLM not initialized. Cannot answer."
 
-# Save and display assistant response
-st.session_state.chat_history.append({"role": "assistant", "content": assistant_response})
-with st.chat_message("assistant"):
-    st.markdown(assistant_response)
+    # Save and display assistant response
+    st.session_state.chat_history.append({"role": "assistant", "content": assistant_response})
+    with st.chat_message("assistant"):
+        st.markdown(assistant_response)
