@@ -44,22 +44,28 @@ llm = ChatGroq(
 )
 
 # -------------------------
-# RAG SETUP (in-memory)
+# RAG SETUP (in-memory) with try-except only on loading
 # -------------------------
 @st.cache_resource
 def setup_rag():
-    # Load your document
-    loader = TextLoader("sample.txt")  # Ensure sample.txt exists
-    docs = loader.load()
+    # Try to load the document
+    try:
+        loader = TextLoader("sample.txt")  # Make sure sample.txt exists
+        docs = loader.load()
+    except FileNotFoundError:
+        print("Error: sample.txt not found!")
+        return []
+    except Exception as e:
+        print(f"Error loading document: {e}")
+        return []
 
-    # Split into chunks
+    # If loading succeeds, continue splitting and embedding
     splitter = RecursiveCharacterTextSplitter(chunk_size=500, chunk_overlap=50)
     split_docs = splitter.split_documents(docs)
 
-    # Embeddings
     embeddings = HuggingFaceEmbeddings(model_name="sentence-transformers/all-MiniLM-L6-v2")
 
-    # In-memory retriever
+    # Simple in-memory retriever
     retriever = [{"doc": doc, "embedding": embeddings.embed_query(doc.page_content)} for doc in split_docs]
 
     return retriever
