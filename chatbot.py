@@ -1,7 +1,6 @@
 from dotenv import load_dotenv
 import streamlit as st
 from langchain_groq import ChatGroq
-from langchain.schema import HumanMessage
 
 # -------------------------
 # LOAD ENV VARIABLES
@@ -98,7 +97,7 @@ if user_prompt:
     # combine context
     context = "\n".join([doc.page_content for doc in docs])
 
-    # RAG prompt
+    # RAG prompt (original — no clarification logic)
     rag_prompt = f"""
 You are an internal company support assistant.
 
@@ -121,10 +120,8 @@ User Question:
 Helpful Answer:
 """
 
-    # -------------------------
-    # GENERATE RESPONSE (FIXED)
-    # -------------------------
-    response = llm.invoke([HumanMessage(content=rag_prompt)])
+    # generate response
+    response = llm.invoke(rag_prompt)
     assistant_response = response.content
 
     # save response
