@@ -6,6 +6,7 @@ import streamlit as st
 
 # Groq LLM
 from langchain_groq import ChatGroq
+from langchain.schema import HumanMessage
 
 # Embeddings & Document Loading
 from langchain_community.embeddings import HuggingFaceEmbeddings
@@ -15,7 +16,7 @@ from langchain_community.document_loaders import TextLoader
 # LOAD ENV VARIABLES
 # -------------------------
 load_dotenv()
-# Ensure your GROQ_API_KEY is set in .env or environment
+# Ensure GROQ_API_KEY is set in .env or environment
 # GROQ_API_KEY=your_key_here
 
 # -------------------------
@@ -65,28 +66,29 @@ def split_text(text, chunk_size=500, overlap=50):
     return chunks
 
 # -------------------------
-# RAG SETUP (in-memory)
+# RAG SETUP (in-memory) with loading spinner
 # -------------------------
 @st.cache_resource
 def setup_rag():
+    retriever = []
     try:
-        loader = TextLoader("sample.txt")
-        docs = loader.load()
+        with st.spinner("Loading document and generating embeddings..."):
+            loader = TextLoader("sample.txt")
+            docs = loader.load()
+
+            split_docs = []
+            for doc in docs:
+                chunks = split_text(doc.page_content, chunk_size=500, overlap=50)
+                for chunk in chunks:
+                    split_docs.append({"page_content": chunk})
+
+            embeddings = HuggingFaceEmbeddings(model_name="sentence-transformers/all-MiniLM-L6-v2")
+            retriever = [{"doc": doc, "embedding": embeddings.embed_query(doc["page_content"])} for doc in split_docs]
+
     except FileNotFoundError:
         st.error("Error: sample.txt not found!")
-        return []
     except Exception as e:
         st.error(f"Error loading document: {e}")
-        return []
-
-    split_docs = []
-    for doc in docs:
-        chunks = split_text(doc.page_content, chunk_size=500, overlap=50)
-        for chunk in chunks:
-            split_docs.append({"page_content": chunk})
-
-    embeddings = HuggingFaceEmbeddings(model_name="sentence-transformers/all-MiniLM-L6-v2")
-    retriever = [{"doc": doc, "embedding": embeddings.embed_query(doc["page_content"])} for doc in split_docs]
 
     return retriever
 
@@ -135,11 +137,13 @@ Helpful Answer:
 """
 
     # -------------------------
-    # Call LLM safely
+    # Call LLM safely using Groq .generate()
     # -------------------------
     if llm:
         try:
-            assistant_response = llm(rag_prompt)  # returns string directly
+            messages = [HumanMessage(content=rag_prompt)]
+            completion = llm.generate(messages)
+            assistant_response = completion.generations[0][0].text
             if not assistant_response.strip():
                 assistant_response = "I don't know."
         except Exception as e:
