@@ -1,233 +1,95 @@
-# HPE GreenLake Knowledge Base
+HPE GreenLake Knowledge Base
 
-## 1. How to add Service Subscriptions
+Question: How to reset password in HPE GreenLake?
+Answer:
+Follow these steps to reset your password:
+1. Go to the GreenLake login page: https://greenlake.cloud/login
+2. Click "Forgot Password".
+3. Enter your registered email address.
+4. Check your email and click the reset link.
+5. Create a new password with:
+   - Minimum 12 characters
+   - One uppercase letter
+   - One lowercase letter
+   - One number
+   - One special character
+6. Click Submit and login with new password.
 
-### About Service Subscriptions
+--------------------------------------------------
 
-* Service subscriptions allow users to activate and use services within a workspace.
-* A subscription key is required to enable a service.
-* Only one subscription is needed per service per workspace.
-* When a service is deployed, the subscription is automatically applied.
+Question: How to add service subscription to workspace?
+Answer:
+1. Login to GreenLake Cloud.
+2. Click Global Navigation Menu.
+3. Go to Services → Manage Service Subscription.
+4. Click Add Service Subscription.
+5. Enter subscription key received via email.
+6. Assign tags if needed.
+7. Review details and click Finish.
 
-### Prerequisites for Adding Service Subscription
+Prerequisites:
+- Workspace Administrator role required.
+- Service must be set up.
+- Subscription key required.
 
-* User must have **Workspace Administrator role** OR permission to modify subscriptions.
-* Services must be set up before adding a subscription.
-* Subscription key must be received from HPE via email.
+--------------------------------------------------
 
-### Steps to Add Service Subscription
-
-#### Step 1 — Open Service Subscription Page
-
-* Login to GreenLake Cloud.
-* Click Global Navigation Menu.
-* Navigate: **Services → Manage Service Subscription**.
-* Click **Add Service Subscription**.
-
-#### Step 2 — Enter Subscription Key
-
-* Enter the subscription key received via email.
-* Click Next.
-
-#### Step 3 — Assign Tags (Optional)
-
-* Select or create tag name and value.
-* Maximum 50 tags allowed.
-* Click Next.
-
-#### Step 4 — Manage Showback Rates (Optional)
-
-* Used for usage monitoring services.
-* Enter effective date and rate if required.
-* Click Next.
-
-#### Step 5 — Review and Finish
-
-* Verify all details.
-* Click Finish.
-
-### Viewing Service Subscriptions
-
-Navigate to: **Services → Manage Service Subscription**
-
-You can view:
-
-* Subscription status
-* Expiration date
-* Subscription tier
-* Subscription type
-
-### Removing Service Subscription
-
-Prerequisite: Workspace Administrator role required.
-
-Steps:
-
-* Go to Services → Manage Service Subscription.
-* Select subscription.
-* Click Actions → Remove Subscriptions.
-* Confirm removal.
-
-After removal:
-
-* Subscription can be added to another workspace.
-* Tags are removed.
-* Action recorded in audit log.
-
----
-
-## 2.How to convert MSP Mode (Managed Service Provider Mode)
-
-### Enabling MSP Mode
-
-* MSP mode allows service providers to manage multiple customer environments.
-
-#### Steps
-
+Question: How to convert workspace to MSP mode?
+Answer:
 1. Login as workspace administrator.
-2. Navigate: Workspace Menu → Manage Workspace.
+2. Navigate to Workspace Menu → Manage Workspace.
 3. Click Manage Workspace Type.
 4. Complete required steps:
-
-   * Check eligibility
-   * Remove assignments and subscriptions
-   * Remove unsupported services
-   * Convert workspace
-5. Click **Convert to MSP mode** button.
+   - Check eligibility
+   - Remove assignments and subscriptions
+   - Remove unsupported services
+   - Convert workspace
+5. Click "Convert to MSP mode" button.
 6. Confirm conversion.
 
-Workspace becomes temporarily unavailable during conversion.
+--------------------------------------------------
 
-### Disabling MSP Mode
+Question: How to invite users to workspace?
+Answer:
+1. Go to Manage Workspace.
+2. Open Workspace Identity & Access.
+3. Click Invite Users.
+4. Send sign-up link via email.
 
-* Login as administrator.
-* Go to Manage Workspace → Manage Workspace Type.
-* Review and delete tenant workspaces.
-* Click **Convert to Standard Enterprise Mode**.
-* Confirm conversion.
+--------------------------------------------------
 
----
+Question: How to delete a user?
+Answer:
+1. Go to Manage Workspace.
+2. Open Workspace Identity & Access → Users.
+3. Select the user.
+4. Click Delete and confirm.
 
-## 3. Password Reset Guide
+--------------------------------------------------
 
-### Steps
+Question: How to assign devices to service?
+Answer:
+1. Go to Devices → Devices Inventory.
+2. Select devices.
+3. Click Assign to Service.
+4. Select workspace and service instance.
+5. Finish assignment.
 
-1. Go to: https://greenlake.cloud/login
-2. Click **Forgot Password**.
-3. Enter registered email.
-4. Click reset link from email.
-5. Create new password with:
+--------------------------------------------------
 
-   * Minimum 12 characters
-   * One uppercase letter
-   * One lowercase letter
-   * One number
-   * One special character
-6. Submit and login.
+Question: How to remove device subscription?
+Answer:
+1. Go to Devices → Devices Inventory.
+2. Open Assigned & Subscribed.
+3. Select device.
+4. Click Remove Assignment.
 
----
+--------------------------------------------------
 
-## 4. User Management
-
-### Inviting Users
-
-* Go to Manage Workspace → Workspace Identity & Access.
-* Click Invite Users.
-* Send sign-up link.
-
-### Deleting a User
-
-* Go to Workspace Identity & Access → Users.
-* Select user.
-* Click Delete.
-
-### Viewing Audit Logs
-
-* Go to Manage Workspace → Audit Log.
-* View login, logout, and modification activity.
-
-### Creating User Roles
-
-* Go to Workspace Identity & Access → Roles & Permissions.
-* Click Create Role.
-* Select service and permissions.
-* Review and finish.
-
----
-
-## 5. Device Management
-
-### Adding Devices Using CSV
-
-* Navigate: Devices → Devices Inventory.
-* Click Add Devices.
-* Upload CSV with device details.
-* Assign tags if needed.
-
-### Assigning Devices to Service
-
-* Go to Devices Inventory.
-* Select devices.
-* Click Assign to Service.
-* Select workspace and service instance.
-
-### Removing Device Subscription
-
-* Go to Devices Inventory → Assigned & Subscribed.
-* Select device.
-* Click Remove Assignment.
-
----
-
-## 6. Support Email Templates
-
-### Case Acknowledgment (Initial Response)
-
-* Confirms case creation.
-* Requests required information if missing.
-
-### Follow-up Templates
-
-* Request missing details.
-* Confirm POA implementation.
-* Confirm issue resolution.
-
-### Misrouted Case Handling
-
-* Request serial number.
-* Route to correct support team.
-
----
-
-## 7. Common Troubleshooting Scenarios
-
-### Unable to Onboard Device
-
-* Verify device ownership.
-* Request proof of purchase.
-* Transfer device if required.
-
-### GT Block
-
-* Check workspace status.
-* Raise ticket to unblock.
-
-### License Query
-
-* Verify subscription key.
-* Confirm assignment status.
-
-### MFA Reset
-
-* Verify user.
-* Reset authenticator with approval.
-
-### Password Reset Issue
-
-* Check account status.
-* Share reset link.
-
-### No Roles Assigned
-
-* Verify assigned roles.
-* Contact workspace administrator.
+Question: How to disable MSP mode?
+Answer:
+1. Login as administrator.
+2. Go to Manage Workspace → Manage Workspace Type.
+3. Review and delete tenant workspaces.
+4. Click Convert to Standard Enterprise Mode.
+5. Confirm conversion.
