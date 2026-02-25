@@ -1,9 +1,14 @@
+# chatbot.py
+
+import os
 from dotenv import load_dotenv
 import streamlit as st
+
+# LangChain imports
 from langchain_groq import ChatGroq
 from langchain_community.embeddings import HuggingFaceEmbeddings
 from langchain_community.document_loaders import TextLoader
-from langchain_text_splitters import RecursiveCharacterTextSplitter
+from langchain.text_splitter import RecursiveCharacterTextSplitter
 
 # -------------------------
 # LOAD ENV VARIABLES
@@ -18,7 +23,6 @@ st.set_page_config(
     page_icon="🤖",
     layout="centered",
 )
-
 st.title("💬 GreenLake Assist (RAG)")
 
 # -------------------------
@@ -44,15 +48,18 @@ llm = ChatGroq(
 # -------------------------
 @st.cache_resource
 def setup_rag():
-    loader = TextLoader("sample.txt")
+    # Load your document
+    loader = TextLoader("sample.txt")  # Ensure sample.txt exists
     docs = loader.load()
 
+    # Split into chunks
     splitter = RecursiveCharacterTextSplitter(chunk_size=500, chunk_overlap=50)
     split_docs = splitter.split_documents(docs)
 
+    # Embeddings
     embeddings = HuggingFaceEmbeddings(model_name="sentence-transformers/all-MiniLM-L6-v2")
 
-    # simple in-memory retriever
+    # In-memory retriever
     retriever = [{"doc": doc, "embedding": embeddings.embed_query(doc.page_content)} for doc in split_docs]
 
     return retriever
@@ -60,7 +67,7 @@ def setup_rag():
 retriever = setup_rag()
 
 def simple_retrieve(query):
-    # return top 3 documents (for small datasets)
+    # Return top 3 documents (for small datasets)
     return [item["doc"] for item in retriever][:3]
 
 # -------------------------
@@ -69,13 +76,15 @@ def simple_retrieve(query):
 user_prompt = st.chat_input("Ask from document...")
 
 if user_prompt:
+    # Display user message
     st.chat_message("user").markdown(user_prompt)
     st.session_state.chat_history.append({"role": "user", "content": user_prompt})
 
-    # retrieve context
+    # Retrieve relevant docs
     docs = simple_retrieve(user_prompt)
     context = "\n".join([doc.page_content for doc in docs])
 
+    # RAG prompt
     rag_prompt = f"""
 You are an internal company support assistant.
 
@@ -94,9 +103,10 @@ User Question:
 Helpful Answer:
 """
 
+    # Get assistant response
     assistant_response = llm.predict(rag_prompt)
 
+    # Save and display assistant response
     st.session_state.chat_history.append({"role": "assistant", "content": assistant_response})
-
     with st.chat_message("assistant"):
         st.markdown(assistant_response)
