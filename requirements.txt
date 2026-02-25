@@ -1,6 +1,6 @@
-streamlit>=1.24.0
+streamlit
 python-dotenv
-langchain==1.41.0
+langchain
 langchain-groq
 langchain-community
 sentence-transformers
