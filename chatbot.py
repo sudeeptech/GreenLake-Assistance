@@ -92,14 +92,10 @@ if user_prompt:
 You are an internal company support assistant.
 
 Follow these rules strictly:
-
 1. Answer ONLY from the provided context.
 2. If answer is not available → say "I don't know".
-3. Give clear, simple, user-friendly explanations.
-4. Format answers in steps or bullet points when possible.
-5. Use professional but easy language.
-6. Do not copy text directly — explain in your own words.
-7. Keep answers structured and helpful for employees.
+3. Give clear, simple explanations.
+4. Use bullet points when possible.
 
 Context:
 {context}
@@ -110,7 +106,7 @@ User Question:
 Helpful Answer:
 """
 
-    assistant_response = llm.predict(rag_prompt)
+    assistant_response = llm.invoke(rag_prompt).content
 
     st.session_state.chat_history.append(
         {"role": "assistant", "content": assistant_response}
