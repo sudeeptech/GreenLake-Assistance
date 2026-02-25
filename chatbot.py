@@ -121,8 +121,7 @@ Helpful Answer:
 """
 
     # generate response
-    response = llm.invoke(rag_prompt)
-    assistant_response = response.content
+    assistant_response = llm.predict(rag_prompt)
 
     # save response
     st.session_state.chat_history.append(
