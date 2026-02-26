@@ -137,3 +137,15 @@ Click Add Devices.
 Follow the directions on the Add Devices wizard to complete the device setup. See the field descriptions table for help on each step of the wizard.
 Click Finish to add the device.
 
+
+How to Launching services
+Prerequisites
+You can launch and use the services directly from GreenLake cloud after you successfully add and provision services to your workspace. To learn more about adding services to your workspace, see Adding services to your workspace.
+
+About this task
+Services that have been added to your workspace are listed in the My services section on the Global navigation menu global navigation menu icon.
+
+Procedure
+On the GreenLake cloud header, click the Global navigation menu global navigation menu icon.
+Select Services and under My services, select the service you want to launch.
+The service is launched.
