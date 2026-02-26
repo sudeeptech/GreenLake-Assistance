@@ -127,3 +127,13 @@ Answer:
 1. Go to Devices Inventory → Assigned & Subscribed.
 2. Select device.
 3. Click Remove Assignment.
+
+
+Question: How to add devices
+On the GreenLake cloud header, click the Global navigation menu global navigation menu icon.
+Select Devices > Devices Inventory.
+The Inventory page opens showing all devices in your inventory.
+Click Add Devices.
+Follow the directions on the Add Devices wizard to complete the device setup. See the field descriptions table for help on each step of the wizard.
+Click Finish to add the device.
+
