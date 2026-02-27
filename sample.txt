@@ -149,3 +149,6 @@ Procedure
 On the GreenLake cloud header, click the Global navigation menu global navigation menu icon.
 Select Services and under My services, select the service you want to launch.
 The service is launched.
+
+Question:What is greenlake URL
+common.cloud.hpe.comm
