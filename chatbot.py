@@ -20,7 +20,7 @@ load_dotenv()
 # STREAMLIT UI
 # -------------------------
 st.set_page_config(page_title="Poojitha's AI", page_icon="🤖")
-st.title("💬 GreenLake AI Assist ")
+st.title("💬 Poojitha's AI Assist ")
 
 # -------------------------
 # CHAT HISTORY
